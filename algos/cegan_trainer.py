@@ -25,8 +25,8 @@ class CEGAN_Trainer:
         self.batch_sample2 = self.batch_sample1 + args.eval_size if 'fitness' in args.g_loss_mode else self.batch_sample1
 
         # PG Learner
-        from algos.gan import WGANGP
-        self.learner = WGANGP(args, model_constructor, env_constructor)
+        from algos.gan import GAN
+        self.learner = GAN(args, model_constructor, env_constructor)
 
         # Evolution
         self.evolver = SSNE(self.args, self.learner.netG, self.learner.optimizerG, self.learner.netD)
