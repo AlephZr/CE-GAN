@@ -24,7 +24,7 @@ sys.path.append(os.getcwd())
 # extracted files here!
 
 
-class WGANGP(object):
+class GAN(object):
     def __init__(self, args, model_constructor, env_constructor):
         self.args = args
         self.env = env_constructor
