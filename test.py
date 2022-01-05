@@ -171,6 +171,7 @@ for i in range(20):
     model_constructor = ModelConstructor(args,
                                          generator_seed='./checkpoint/{0}/netG_{1}.pth'.format(args.dataset_name, gen))
     netG = model_constructor.make_model('Generator', True)
+    netG.eval()
     ai.test(netG, gen)
 args.writer.close()
 
